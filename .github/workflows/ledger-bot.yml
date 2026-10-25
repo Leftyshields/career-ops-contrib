@@ -191,8 +191,10 @@ jobs:
     steps:
       - name: Gate on allowlist
         id: gate
+        env:
+          COMMENT_USER_LOGIN: ${{ github.event.comment.user.login }}
         run: |
-          echo "${APPROVER_ALLOWLIST}" | tr ',' '\n' | grep -qix "${{ github.event.comment.user.login }}" \
+          echo "${APPROVER_ALLOWLIST}" | tr ',' '\n' | grep -qix "${COMMENT_USER_LOGIN}" \
             && echo "ok=true" >> "$GITHUB_OUTPUT" || echo "ok=false" >> "$GITHUB_OUTPUT"
       - name: Apply signature from PR metadata
         if: steps.gate.outputs.ok == 'true'
