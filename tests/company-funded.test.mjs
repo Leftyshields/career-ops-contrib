@@ -341,7 +341,7 @@ try {
         <item>
           <title>Acme raises $25M Series A</title>
           <link>https://techcrunch.com/acme</link>
-          <pubDate>Wed, 15 Jul 2026 12:00:00 +0000</pubDate>
+          <pubDate>Thu, 01 Oct 2026 12:00:00 +0000</pubDate>
           <description>Acme raises funding.</description>
         </item>
       </channel></rss>`, {
